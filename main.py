@@ -22,3 +22,18 @@ if nombre_ingresado in nombres:
     print("la edad de", nombre_ingresado, "es", edades[nombre_ingresado])
 else: 
     print("el nombre ingresado no existe en la lista")
+    opcion = input("¿Desea agregarlo? (s/n): ").lower()
+
+    if opcion == "s":
+        edad_nueva = int(input("Ingresa la edad: "))
+        nombres.append(nombre_ingresado)
+        edades[nombre_ingresado] = edad_nueva
+        print("Registro existoso.")
+    else:
+        print("Operación Cancelada.")
+
+input("Presiona ENTER para continuar...")
+
+print("\n-- Nombres ingresados--")
+for nombre, edad in edades.items():
+    print(f"{nombre}: {edad} años")
