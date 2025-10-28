@@ -11,3 +11,7 @@ edades = {
     "Mia": 20,
     "Felix": 24,
 }
+
+#Solicitud de nombre
+
+nombre_ingresado = input("Ingrese un nombre existente: ")
