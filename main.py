@@ -1,7 +1,13 @@
+# Mensaje de bienvenida centrado
+ancho = 70
+print("=" * ancho)
+print("¡Bienvenido al Sistema de Consulta de Edades!".center(ancho))
+print("=" * ancho)
+print("Introduce un nombre que forme parte del sistema.")
+print("-" * ancho)
+
 # Lista de nombres 
-
 nombres = ["Lucas", "Ana", "John", "Mia", "Felix"]
-
 
 # Diccionario de edades 
 edades = {
@@ -12,28 +18,51 @@ edades = {
     "Felix": 24,
 }
 
-#Solicitud de nombre
+# Bucle principal
+while True:
+    # Solicitar un nombre
+    nombre_ingresado = input("\nIngrese un nombre: ").strip()
 
+    # Cláusula para búsqueda sin distinción de mayúsculas/minúsculas
+    nombre_encontrado = None
+    for nombre in edades:
+        if nombre.lower() == nombre_ingresado.lower():
+            nombre_encontrado = nombre
+            break
 
-nombre_ingresado = input("Ingrese un nombre existente: ")
-
-#condicionales para verificar si el nombre ingresado existe.
-if nombre_ingresado in nombres:
-    print("la edad de", nombre_ingresado, "es", edades[nombre_ingresado])
-else: 
-    print("el nombre ingresado no existe en la lista")
-    opcion = input("¿Desea agregarlo? (s/n): ").lower()
-
-    if opcion == "s":
-        edad_nueva = int(input("Ingresa la edad: "))
-        nombres.append(nombre_ingresado)
-        edades[nombre_ingresado] = edad_nueva
-        print("Registro existoso.")
+    if nombre_encontrado:
+        print(f"\n{nombre_encontrado} tiene {edades[nombre_encontrado]} años.")
     else:
-        print("Operación Cancelada.")
+        print("El nombre ingresado no existe en el sistema.")
+        opcion = input("¿Desea agregarlo? (s/n): ").lower().strip()
+        if opcion == "s":
+            try:
+                edad_nueva = int(input("Ingresa la edad: "))
+                nombres.append(nombre_ingresado)
+                edades[nombre_ingresado] = edad_nueva
+                print("Registro exitoso.")
+            except ValueError:
+                print("Edad inválida. No se agregó el registro.")
+        else:
+            print("Operación cancelada.")
 
-input("Presiona ENTER para continuar...")
+    # Preguntar qué hacer a continuación
+    print("\n¿Qué deseas hacer ahora?")
+    print("a) Introducir otro nombre")
+    print("b) Ver la lista de nombres ingresados")
+    print("c) Salir del sistema")
+    
+    siguiente = input("Elige una opción (a/b/c): ").lower().strip()
+    
+    if siguiente == "b":
+        print("\n-- Nombres ingresados --")
+        for nombre, edad in edades.items():
+            print(f"{nombre}: {edad} años")
+        print("\n¿Qué deseas hacer ahora?")
+        print("a) Introducir otro nombre")
+        print("c) Salir del sistema")
+        siguiente = input("Elige una opción (a/c): ").lower().strip()
 
-print("\n-- Nombres ingresados--")
-for nombre, edad in edades.items():
-    print(f"{nombre}: {edad} años")
+    if siguiente == "c":
+        print("\nGracias por usar el sistema. ¡Hasta pronto!")
+        break
