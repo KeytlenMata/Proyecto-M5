@@ -1,16 +1,21 @@
 # Proyecto Módulo 5 – Grupo A
 
 ## Descripción
-Programa colaborativo en Python que permite **consultar la edad de una persona** a partir de una lista predefinida de nombres. El programa utiliza **listas, diccionarios y condicionales** para gestionar los datos y responder a las consultas del usuario.
+Programa colaborativo en Python que permite **consultar la edad de una persona** a partir de una lista predefinida de nombres. Además, el usuario puede **agregar nuevos registros**, **ver la lista completa de personas** y **salir del sistema** cuando lo desee.
+
+El programa utiliza **listas, diccionarios, bucles y condicionales** para gestionar los datos y ofrecer una experiencia interactiva. La búsqueda de nombres es **insensible a mayúsculas y minúsculas** para mayor usabilidad.
 
 Este proyecto fue desarrollado por **5 integrantes del Grupo A** como parte de la actividad del módulo 5.
 
-### Restricciones cumplidas:
-- Se utiliza una **lista** con al menos 5 nombres de personas.
-- Se crea un **diccionario** donde las claves son los nombres y los valores son las edades.
-- Se emplean **condicionales** para verificar si el nombre ingresado existe.
-- Se usa **`input()`** para recibir el nombre del usuario.
-- Se usa **`print()`** para mostrar la edad o un mensaje de error.
+### Funcionalidades implementadas:
+-  Lista con al menos 5 nombres de personas.
+-  Diccionario con nombres como claves y edades como valores.
+-  Condicionales (`if/else`) para verificar existencia de nombres.
+-  Bucle (`while`) para permitir múltiples consultas.
+-  Entrada del usuario mediante `input()`.
+-  Salida formateada con `print()`.
+-  Búsqueda insensible a mayúsculas/minúsculas.
+-  Opción para agregar nuevos registros si no existen.
 
 ## Integrantes
 - Keytlen Mata  
@@ -24,5 +29,4 @@ Este proyecto fue desarrollado por **5 integrantes del Grupo A** como parte de l
 2. Abre una terminal en la carpeta del proyecto.  
 3. Ejecuta:  
    ```bash
-   python edad_consulta.py
-   ```
+   python main.py
